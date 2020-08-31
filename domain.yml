@@ -1,0 +1,54 @@
+session_config:
+  session_expiration_time: 60
+  carry_over_slots_to_new_session: true
+intents:
+- greet
+- goodbye
+- affirm
+- country
+- search_capital
+- deny
+- bot_challenge
+entities:
+- GPE
+slots:
+  GPE:
+    type: text
+  capital:
+    type: unfeaturized
+responses:
+  utter_greet:
+  - text: Hey! How are you?
+  - text: Hi there, How are you doing?
+  - text: Hello there
+  - text: Hello
+  - text: Hi
+  - text: Hello! I am Capital Bot, here to help you find the capital city of any country
+  - text: Hi there
+  utter_cheer_up:
+  - image: https://i.imgur.com/nGF1K8f.jpg
+    text: 'Here is something to cheer you up:'
+  utter_did_that_help:
+  - text: Did that help you?
+  utter_happy:
+  - text: Great, carry on!
+  utter_goodbye:
+  - text: Bye
+  - text: Bye. See you later
+  - text: See you later
+  utter_iamabot:
+  - text: I am a bot, powered by Rasa.
+  utter_ask_country:
+  - text: Sure. Which country you would like to know?
+  - text: Can you please give a country name?
+  - text: Do you have a country name in your mind?
+  - text: Give a country name please
+actions:
+- utter_greet
+- utter_cheer_up
+- utter_did_that_help
+- utter_happy
+- utter_goodbye
+- utter_iamabot
+- utter_ask_country
+- action_capital_search
